@@ -1,13 +1,13 @@
 ######################################
-#         Kai New User Script        #
+#         New User Script            #
 #                                    #
-#    Used to add Employees to Domain    #
+#    Used to add Employees to Domain #
 #                                    #
 #   Version 7.4 by Colin Combrink    #
 ######################################
 
-# This script contains a GUI that provisions and creates a new KAI Network User. You must have PSCribo, ADTools, and MSOnline to run.
-# Account asked for During Prompt is USER@Kai-usa.com Format only!
+# This script contains a GUI that provisions and creates a new Network User. You must have PSCribo, ADTools, and MSOnline to run.
+# Account asked for During Prompt is USER@domain.com Format only!
 #
 # Version 7.3
 #  
@@ -1072,8 +1072,6 @@ $Run.Add_Click({
 #Set Extension to Input Field
     $ext = $Extension.Text
 
-#Set Rule Type Allow or Deny
-    $RuleType = "Allow" 
 
 ####### Create New Domain User #######
 
@@ -1262,7 +1260,7 @@ if ($Email.Checked -eq $true) {
 
          #assign $domadmin
          
-         U: Drive Create Requested for $user.  Please Create drive and assign security premissions to $user on hq-cohesity 
+         U: Drive Create Requested for $user.  Please Create drive and assign security premissions to $user on User File Share location
          "    
         #Send Email
         $body = ($Body | Out-String)
@@ -1274,10 +1272,7 @@ if ($Email.Checked -eq $true) {
         $SMTPClient.EnableSsl = $False
         $SMTPClient.Credentials = New-Object System.Net.NetworkCredential( $from , $frompass );
         $SMTPClient.Send( $emailUDMessage )
-
-        #Send-MailMessage -to $hemail -From $from -SmtpServer $smtphost -Subject "UDrive Requested for $User" -BodyAsHtml -Body ($body | Out-String)
-        
-
+       
         $output.ForeColor = [Drawing.Color]::Red
         $output.AppendText("Personal Drive Help Desk Ticket Created")
         $output.AppendText("`r`n")}
