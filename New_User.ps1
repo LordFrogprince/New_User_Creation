@@ -12,13 +12,12 @@
 # Version 7.3
 #  
 # This versions adds to the email portion to open a ticket if the user needs a U - Drive Created. This process currently 
-# requries domain admin(s) to fullfill. Set at line 1151 and account at 952
-# July 2018
+# requries domain admin(s) to fullfill. Set at line 1255 and account at 1006 and 1010 for help desk email.
 
 #
-# Updates - Email is now down with authentication for Automation.System
+# Updates - Email is now down with authentication for Automation Account
 # Papercut is only assiged with email
-# Changes exchange database option to only be one of the MXDB non mobile
+# Changes exchange database option to be dynamic
 # Adds logic to auto install PSCribo
 # Added Cell Phone User Group and Checkbox
 
