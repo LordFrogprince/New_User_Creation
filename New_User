@@ -43,7 +43,7 @@ $Groupbox2.text                  = "User"
 $Groupbox2.location              = New-Object System.Drawing.Point(15,20)
 
 $NewDomainLabel                     = New-Object system.Windows.Forms.Label
-$NewDomainLabel.text                = "New Domain User"
+$NewDomainLabel.text                = "New User"
 $NewDomainLabel.AutoSize            = $true
 $NewDomainLabel.width               = 25
 $NewDomainLabel.height              = 10
@@ -1153,17 +1153,17 @@ if ($Email.Checked -eq $true) {
         sleep -seconds 1
 
 
-    # Set Kai Logi House if Checked
+    # Set Logi House if Checked
         if($LogiHouse.Checked -eq $true) {
              Add-ADGroupMember -Identity  "ADGroup for Second Building" -Members $User 
              Set-ADUser -Identity $user -Office "Company Building" -City "Where" -state "State" -PostalCode "Postal" -Country "US" -StreetAddress "Street Address"
              $output.ForeColor = [Drawing.Color]::Green
-             $output.AppendText("$User added to Kai Logi House")
+             $output.AppendText("$User added to Logi House")
              $output.AppendText("`r`n")}
 
-    # Set Kai HQ if Checked
+    # Set HQ if Checked
         if($HQ.Checked -eq $True) {
-             Add-ADGroupMember -Identity "KaiHQ" -Members $User
+             Add-ADGroupMember -Identity "HQ" -Members $User
              Set-ADUser -Identity $user -Office "Company Building" -City "Where" -state "State" -PostalCode "Postal" -Country "US" -StreetAddress "Street Address"
              $output.ForeColor = [Drawing.Color]::Green
              $output.AppendText("$User added to Company HQ")
