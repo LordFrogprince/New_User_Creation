@@ -3,6 +3,12 @@ This script has been sanitized from a working enviroment.
 
 You will need AD Tools installed, PSCribo Installed (or run as admin and PSCribo will install)
 
+Account Options: This section is used to select if the user will get an email account, use the Dynamics AX, Join the Office 365 Group, Building location, Papercut Secure Print and if they have a company cell phone.
+
+Department: Sets the Department for the new user.  This calls for the OU to be set in lines 1307 thru 1413
+
+Network Drives: The section sets security group logic for network drives.  Each drive is mapped to a security group.
+
 Line 627: This is the location of the included password generation list text file.  This needs to be located at a UNC path that the script can access.
 
 Line 704 thru 950: These sections the begining Checkbox logic for each department needs to have the full OU path.  This is for the correct user location once they are created
