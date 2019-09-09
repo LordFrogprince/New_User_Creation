@@ -3,7 +3,7 @@
 #                                    #
 #    Used to add Employees to Domain #
 #                                    #
-#   Version 7.4 by Colin Combrink    #
+#   Version 7.4                      #
 ######################################
 
 # This script contains a GUI that provisions and creates a new Network User. You must have PSCribo, ADTools, and MSOnline to run.
@@ -1215,13 +1215,13 @@ if ($Email.Checked -eq $true) {
         $output.AppendText("`r`n")}
 
     if($ODrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Warranty_SG" -Members $User
+        Add-ADGroupMember -Identity "Warranty" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Warranty (O) Drive Added")
         $output.AppendText("`r`n")}
 
     if($PDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Cad Shared Files_RO" -Members $User
+        Add-ADGroupMember -Identity "Cad Shared Files" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Cad Shared File (P) Drive Added")
         $output.AppendText("`r`n")}
