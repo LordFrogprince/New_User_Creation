@@ -1109,26 +1109,26 @@ if ($Email.Checked -eq $true) {
 
     # Set AX user if Checked
         if($AX.Checked -eq $true) {
-            Add-ADGroupMember -Identity  "AXUSERS" -Members $User
+            Add-ADGroupMember -Identity  "Security Group" -Members $User
             $output.ForeColor = [Drawing.Color]::Green
-            $output.AppendText("$User added to AXUSERS")
+            $output.AppendText("$User added to Security Group")
             $output.AppendText("`r`n")}
 
     # Set Office 365 Licensing if checked
-        if($Office.Checked -eq $True) {  Add-ADGroupMember -Identity  "Office365" -Members $User
+        if($Office.Checked -eq $True) {  Add-ADGroupMember -Identity  "Security Group" -Members $User
             $output.ForeColor = [Drawing.Color]::Green
-            $output.AppendText("$User Office 365 Group Added")
+            $output.AppendText("$User Office Security Group Added")
             $output.AppendText("`r`n")}
  
      #Set New Hire Group membership
         if ($Email.Checked -eq $true) { 
-             Add-ADGroupMember -Identity  "New Hire" -Members $User 
+             Add-ADGroupMember -Identity  "Security Group" -Members $User 
              $output.ForeColor = [Drawing.Color]::Green
-             $output.AppendText("$User added to New Hire KnowBe4")
+             $output.AppendText("$User added to Security Group KnowBe4")
              $output.AppendText("`r`n")}
                 
     # Set User Company
-        Set-ADUser -Identity $user -Company "Company" 
+        Set-ADUser -Identity $user -Company "COMPANY" 
         sleep -seconds 1
 
     # Set Company Department
@@ -1154,7 +1154,7 @@ if ($Email.Checked -eq $true) {
 
     # Set Logi House if Checked
         if($LogiHouse.Checked -eq $true) {
-             Add-ADGroupMember -Identity  "ADGroup for Second Building" -Members $User 
+             Add-ADGroupMember -Identity  "Distrubition Group for Logihouse" -Members $User 
              Set-ADUser -Identity $user -Office "Company Building" -City "Where" -state "State" -PostalCode "Postal" -Country "US" -StreetAddress "Street Address"
              $output.ForeColor = [Drawing.Color]::Green
              $output.AppendText("$User added to Logi House")
@@ -1162,7 +1162,7 @@ if ($Email.Checked -eq $true) {
 
     # Set HQ if Checked
         if($HQ.Checked -eq $True) {
-             Add-ADGroupMember -Identity "HQ" -Members $User
+             Add-ADGroupMember -Identity "Distrubition Group for HQ" -Members $User
              Set-ADUser -Identity $user -Office "Company Building" -City "Where" -state "State" -PostalCode "Postal" -Country "US" -StreetAddress "Street Address"
              $output.ForeColor = [Drawing.Color]::Green
              $output.AppendText("$User added to Company HQ")
@@ -1170,14 +1170,14 @@ if ($Email.Checked -eq $true) {
     
     # Set Papercut user if Checked
         if($Papercut.Checked -eq $true) {
-            Add-ADGroupMember -Identity  "Papercut" -Members $User
+            Add-ADGroupMember -Identity  "Security Group" -Members $User
             $output.ForeColor = [Drawing.Color]::Green
             $output.AppendText("$User added to Papercut")
             $output.AppendText("`r`n")}
 
     # Set Cell Phone Group if checked
         if($ComPhone.Checked -eq $True) {  
-            Add-ADGroupMember -Identity  "iPhone-Users" -Members $User
+            Add-ADGroupMember -Identity  "Security Group" -Members $User
             $output.ForeColor = [Drawing.Color]::Green
             $output.AppendText("$User Iphone User Group Added")
             $output.AppendText("`r`n")}
@@ -1185,68 +1185,68 @@ if ($Email.Checked -eq $true) {
 
 # Add Network Drive Security Groups
     if($HDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Housewares" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Housewares (H) Drive Added")
         $output.AppendText("`r`n")} 
         
     if($JDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Label Files" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Label (J) Drive Added")
         $output.AppendText("`r`n")}             
             
     if($IDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "EDI" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("EDI (I) Drive Added")
         $output.AppendText("`r`n")}
 
     if($KDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "IT" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("K (IT) Drive Added")
         $output.AppendText("`r`n")}
 
     if($MDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "M2M Drive Map" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("M2M (M) Drive Added")
         $output.AppendText("`r`n")}
 
     if($ODrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Warranty" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Warranty (O) Drive Added")
         $output.AppendText("`r`n")}
 
     if($PDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Cad Shared Files" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Cad Shared File (P) Drive Added")
         $output.AppendText("`r`n")}
  
     if($QDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Customer Service" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Customer Service (Q) Drive Added")
         $output.AppendText("`r`n")}
  
     if($RDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "ShopFloor" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Shop Floor (R) Drive Added")
         $output.AppendText("`r`n")}
 
     if($SDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Shipping" -Members $User
-        Add-ADGroupMember -Identity "Shipping Users" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive x2" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Shipping (S) Drive Added")
         $output.AppendText("`r`n")}
 
     if($TDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Controllers" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Contoller (T) Drive Added")
         $output.AppendText("`r`n")}
@@ -1277,25 +1277,25 @@ if ($Email.Checked -eq $true) {
         $output.AppendText("`r`n")}
 
     if($SVDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Developers" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("SVN (V) Drive Added")
         $output.AppendText("`r`n")}
  
     if($WDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "MachineControl_RO" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Machine Control (W) Drive Added")
         $output.AppendText("`r`n")}
 
     if($XDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Receiving_Inspection" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Receiving Inspection (X) Drive Added")
         $output.AppendText("`r`n")}
  
     if($ZDrive.Checked -eq $True) {
-        Add-ADGroupMember -Identity "Finance" -Members $User
+        Add-ADGroupMember -Identity "SecurityGroup For Drive" -Members $User
         $output.ForeColor = [Drawing.Color]::Green
         $output.AppendText("Finance (Z) Drive Added")
         $output.AppendText("`r`n")}
@@ -1312,7 +1312,7 @@ if ($Email.Checked -eq $true) {
                    BlankLine        
                    Paragraph "$First $Last," -Bold -Italic
                    BlankLine
-                   Paragraph "Here at the Company you will have access to a number of computer resources. To access these resources, you will use the network login of $user, with the password of $Passwordfile on the domain."
+                   Paragraph "Here at the COMPANY you will have access to a number of computer resources. To access these resources, you will use the network login of $user, with the password of $Passwordfile on the domain."
                    BlankLine
                    Paragraph "You will have the email address of $User@domain.com to send and receive email."
                    BlankLine
@@ -1368,7 +1368,7 @@ if ($Email.Checked -eq $true) {
                    BlankLine        
                    Paragraph "$First $Last," -Bold -Italic
                    BlankLine
-                   Paragraph "Here at the company you will have access to a number of computer resources. To access these resources, you will use the network login of $user, with the password of $Passwordfile on the company domain."
+                   Paragraph "Here at the COMPANY you will have access to a number of computer resources. To access these resources, you will use the network login of $user, with the password of $Passwordfile on the company domain."
                    BlankLine
                    Paragraph "We currently use Microsoft Office for documents and email. If you have any questions on these programs please let your manager or the IT Department know so we can get you basic training in these tools if needed."
                    BlankLine
